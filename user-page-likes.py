@@ -36,7 +36,8 @@ if len(sys.argv) > 1:
                 what_page = '"http://www.facebook.com/{0}"'.format(what_page_id)
                 fb_user_link = '"http://www.facebook.com/{0}"'.format(information['id'])
                 fb_user_name = '"%s"' % (information['name'])
-                information_list.append([i, what_page, fb_user_link, fb_user_name])
+                print fb_user_name
+                information_list.append([i+1, what_page, fb_user_link, fb_user_name])
                 i += 1
 
         if 'next' in res.json()['paging']:
