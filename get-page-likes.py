@@ -65,5 +65,5 @@ for i in information_list:
 print('爬取結束!')
 
 #最後將list轉換成dataframe，並輸出成csv檔
-information_df = pd.DataFrame(user_list, columns=['粉絲ID', '粉絲名稱', '粉絲首頁']) 
+information_df = pd.DataFrame(user_list, columns=['fans_id', 'user_name', 'user_link'])
 information_df.to_csv(out_file, index=False, sep=',', encoding='utf-8')

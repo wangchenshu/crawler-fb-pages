@@ -36,5 +36,5 @@ for ele in fanpage:
             break
 
 #最後將list轉換成dataframe，並輸出成csv檔
-information_df = pd.DataFrame(information_list, columns=['粉絲專頁', '發文內容', '發文時間']) 
+information_df = pd.DataFrame(information_list, columns=['fans_page', 'message', 'created_time'])
 information_df.to_csv(out_file, index=False, sep=',', encoding='utf-8')

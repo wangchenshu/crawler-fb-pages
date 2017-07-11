@@ -46,7 +46,7 @@ if len(sys.argv) > 1:
             break
 
     #最後將list轉換成dataframe，並輸出成csv檔
-    information_df = pd.DataFrame(information_list, columns=['序號', '粉絲專頁', '臉書連結', '姓名']) 
+    information_df = pd.DataFrame(information_list, columns=['serial', 'fans_page', 'user_link', 'user_name'])
     information_df.to_csv(out_file, index=False, sep=',', encoding='utf-8', quoting=csv.QUOTE_NONE)
 else:
     print 'Usage: python {0} <page-id>'.format(sys.argv[0])
