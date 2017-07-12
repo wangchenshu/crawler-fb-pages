@@ -39,7 +39,7 @@ if len(sys.argv) > 1:
                 fb_user_name = '"%s"' % (information['from']['name'])
                 fb_user_message = '"%s"' % (information['message'])
                 created_time = '"{0}"'.format(parse(information['created_time']).date())
-                information_list.append([i+1, what_page, fb_user_link, fb_user_name, fb_user_message, created_time])ls
+                information_list.append([i+1, what_page, fb_user_link, fb_user_name, fb_user_message, created_time])
                 
                 i += 1
         if 'next' in res.json()['paging']:
