@@ -24,7 +24,7 @@ if len(sys.argv) > 1:
     #建立一個空的list
     information_list = []
 
-    out_file = 'who-likes-{0}.csv'.format(what_page_id)
+    out_file = 'who_likes_{0}.csv'.format(what_page_id)
 
     res = requests.get('https://graph.facebook.com/v2.9/{}/likes?summary=true&access_token={}'.format(what_page_id, token))
 

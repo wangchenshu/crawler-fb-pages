@@ -18,7 +18,7 @@ fanpage = {fanpage_id : fanpage_name}
 #建立一個空的list
 information_list = []
 
-out_file = 'all-post.csv'
+out_file = 'all_post.csv'
 
 #使用for迴圈依序讀取粉絲頁的資訊，並使用format將id與token傳入{}裡
 for ele in fanpage:

@@ -24,7 +24,7 @@ if len(sys.argv) > 1:
     #建立一個空的list
     information_list = []
 
-    out_file = 'who-comments-{0}.csv'.format(what_page_id)
+    out_file = 'who_comments_{0}.csv'.format(what_page_id)
 
     res = requests.get('https://graph.facebook.com/v2.9/{}/comments?summary=true&access_token={}'.format(what_page_id, token))
 
@@ -39,7 +39,7 @@ if len(sys.argv) > 1:
                 fb_user_name = '"%s"' % (information['from']['name'])
                 fb_user_message = '"%s"' % (information['message'])
                 created_time = '"{0}"'.format(parse(information['created_time']).date())
-                information_list.append([i+1, what_page, fb_user_link, fb_user_name, fb_user_message, created_time])
+                information_list.append([i+1, what_page, fb_user_link, fb_user_name, fb_user_message.replace('\n',' '), created_time])
                 
                 i += 1
         if 'next' in res.json()['paging']:

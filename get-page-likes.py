@@ -16,7 +16,7 @@ filter_page_id = config.filter_page_id
 #建立一個空的list
 information_list = []
 
-out_file = 'all-likes.csv'
+out_file = 'all_likes.csv'
 
 #目標頁面
 res = requests.get('https://graph.facebook.com/v2.9/{}/posts?limit=100&access_token={}'.format(fanpage_id, token))
