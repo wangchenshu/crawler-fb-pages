@@ -35,17 +35,17 @@ while 'paging' in res.json():
             try:
                 if 'next' not in res_post.json()['paging']:
                     for likes in res_post.json()['data']:
-                        information_list.append([information['id'], information['message'], parse(information['created_time']).date(), likes['id'], likes['name']])                
+                        information_list.append([information['id'], information['message'], parse(information['created_time']), likes['id'], likes['name']])
                 elif 'next' in res_post.json()['paging']:
                     while 'paging' in res_post.json():
                         for likes in res_post.json()['data']:
-                            information_list.append([information['id'], information['message'], parse(information['created_time']).date(), likes['id'], likes['name']])
+                            information_list.append([information['id'], information['message'], parse(information['created_time']), likes['id'], likes['name']])
                         if 'next' in res_post.json()['paging']:
                             res_post = requests.get(res_post.json()['paging']['next'])
                         else:
                             break
             except:
-                information_list.append([information['id'], information['message'], parse(information['created_time']).date(), "NO", "NO"])
+                information_list.append([information['id'], information['message'], parse(information['created_time']), "NO", "NO"])
 
     if 'next' in res.json()['paging']:                
         res = requests.get(res.json()['paging']['next'])

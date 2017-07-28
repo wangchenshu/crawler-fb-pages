@@ -28,7 +28,7 @@ for ele in fanpage:
     while 'paging' in res.json(): 
         for information in res.json()['data']:
             if 'message' in information:
-                information_list.append([fanpage[ele], information['message'], parse(information['created_time']).date()])
+                information_list.append([fanpage[ele], information['message'], information['id'], parse(information['created_time'])])
 
         if 'next' in res.json()['paging']:
             res = requests.get(res.json()['paging']['next'])
@@ -36,5 +36,5 @@ for ele in fanpage:
             break
 
 #最後將list轉換成dataframe，並輸出成csv檔
-information_df = pd.DataFrame(information_list, columns=['fans_page', 'message', 'created_time'])
+information_df = pd.DataFrame(information_list, columns=['fans_page', 'message', 'id', 'created_time'])
 information_df.to_csv(out_file, index=False, sep=',', encoding='utf-8')
